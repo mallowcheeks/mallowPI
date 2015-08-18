@@ -1,0 +1,23 @@
+#!/bin/bash
+# Shutdown script to add a prompt to avoid accidental execution
+#
+# Writting by Roger Dalupang
+#
+# Date: August 9, 2015
+#
+#
+
+# Variables
+yLower="y"
+yUpper="Y"
+
+echo -n "Are you sure you want to SHUTDOWN? (y/n)> "
+
+read answer
+
+if [ "$answer" = "$yLower" -o "$answer" = "$yUpper" ]; then
+  echo "Shutting Pi down..."
+  sudo poweroff
+else
+  echo "Not Shutting down..."
+fi

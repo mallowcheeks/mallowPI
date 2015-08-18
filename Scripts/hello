@@ -1,0 +1,31 @@
+#!/bin/bash
+# hello script to run upon logging onto mallowPi
+# Set default folder upon running
+# Activate bashrc
+# Mount all network drives
+#
+# Writting by Roger Dalupang
+#
+# Date: August 7, 2015
+#
+## Add commands here ##
+cd /
+. /etc/bash.bashrc
+sudo mount -a
+
+######################
+
+## Add Welcome Statement here ##
+## Anything you want to display to the user ##
+
+echo "mallowPi has now been initialized..."
+echo "==Welcome"  $USER"=="
+echo "===================================="
+echo " "
+#ps ax | grep -v grep | grep smbd | wc -l > /tmp/dev/smbd
+RUNNING=cat /tmp/dev/smdb
+if [$RUNNING -gt 0]; then
+  echo "Samba status: On"
+else
+  echo "Samba status: Off"
+fi
